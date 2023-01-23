@@ -19,6 +19,7 @@ import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:charts_common/common.dart' as common;
 
 /// This is just a simple line chart with a behavior that adds slider controls.
 ///
@@ -160,6 +161,7 @@ class _SliderCallbackState extends State<SliderLine> {
             // configures the color and sizing of the slider line and handle.
             behaviors: [
               new charts.Slider(
+                style: charts.SliderStyle(handlePosition: common.SliderHandlePosition.bottom),
                   initialDomainValue: 1.0, onChangeCallback: _onSliderChange),
             ],
           )),

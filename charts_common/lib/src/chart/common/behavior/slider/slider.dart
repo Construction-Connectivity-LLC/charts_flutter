@@ -425,6 +425,9 @@ class Slider<D> implements ChartBehavior<D> {
         case SliderHandlePosition.top:
           handleReferenceY = viewBounds.top;
           break;
+        case SliderHandlePosition.bottom:
+          handleReferenceY = viewBounds.bottomRight.y;
+          break;
         case SliderHandlePosition.manual:
           handleReferenceY = positionY;
           break;
@@ -608,7 +611,7 @@ class SliderStyle {
 ///
 /// [manual] indicates that the slider vertical position can be set every
 /// time the slider moves by calling moveSliderToDomain.
-enum SliderHandlePosition { middle, top, manual }
+enum SliderHandlePosition { middle, top, manual, bottom }
 
 /// Layout view component for [Slider].
 class _SliderLayoutView<D> extends LayoutView {
